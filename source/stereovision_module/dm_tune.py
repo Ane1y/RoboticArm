@@ -5,7 +5,7 @@ import cv2
 # from picamera import PiCamera
 import matplotlib as mpl
 
-mpl.use('Qt5Agg')
+# mpl.use('Qt5Agg')
 from matplotlib import pyplot as plt
 
 from depth_map import DepthMap
@@ -182,4 +182,4 @@ sSPWS.on_changed(update)
 
 
 print('Show interface to user')
-plt.show()
+# plt.show()
