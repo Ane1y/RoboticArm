@@ -6,7 +6,7 @@ name: stereovision
 on:
   push:
     branches: [ main ]
-  
+
 jobs:
   build:
 

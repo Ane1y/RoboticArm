@@ -172,9 +172,6 @@ sSR = Slider(SRaxe, 'SpcklRng', 0.0, 40.0, valinit=15)
 sSPWS = Slider(SPWSaxe, 'SpklWinSze', 0.0, 300.0, valinit=100)
 
 
-# Update depth map parameters and redraw
-
-
 # Connect update actions to control elements
 sSWS.on_changed(update)
 sPFS.on_changed(update)
