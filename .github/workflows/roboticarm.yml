@@ -5,7 +5,8 @@ name: stereovision
 
 on:
   push:
-    branches: [ stereovision ]
+    branches: [ main ]
+  
 jobs:
   build:
 
@@ -42,5 +43,3 @@ jobs:
     - name: Test with pytest
       run: |
           pytest
-
-    - uses: actions/checkout@v2
