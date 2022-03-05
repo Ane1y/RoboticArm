@@ -3,8 +3,8 @@ from os import path
 
 import pytest
 
-import stereovision_module.params as params
-from stereovision_module.calibration import Calibrator
+import source.stereovision_module.params as params
+from source.stereovision_module.calibration import Calibrator
 
 os.chdir('/home/runner/work/RoboticArm/RoboticArm/source/stereovision_module')
 
