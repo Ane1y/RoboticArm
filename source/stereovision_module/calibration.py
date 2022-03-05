@@ -1,12 +1,12 @@
 import logging
 import os
+
 import cv2
-import numpy as np
-import json
-from stereovision.calibration import StereoCalibrator
 from stereovision.calibration import StereoCalibration
-from params import *
+from stereovision.calibration import StereoCalibrator
+
 from image_handler import ImageHandler
+from params import *
 
 #logging.basicConfig(level='INFO')
 __metaclass__ = type

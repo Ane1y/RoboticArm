@@ -1,12 +1,10 @@
-
-import json
 import logging
 import os
 import time
-#import picamera
+
+# import picamera
 import cv2
 
-import params
 from image_handler import ImageHandler
 
 

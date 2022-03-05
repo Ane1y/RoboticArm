@@ -2,10 +2,8 @@ import logging
 
 import cv2
 from matplotlib import pyplot as plt
-import numpy as np
-import json
 from stereovision.calibration import StereoCalibration
-import params
+
 from image_handler import ImageHandler
 
 logging.basicConfig(level='INFO')

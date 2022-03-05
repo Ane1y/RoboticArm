@@ -1,6 +1,6 @@
 import os
 
-from dm_tune import *
+from stereovision_module.dm_tune import *
 
 os.chdir('/home/runner/work/RoboticArm/RoboticArm/source/stereovision_module')
 

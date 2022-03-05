@@ -1,5 +1,6 @@
 import pytest
-import Stereovision
+
+import stereovision_module.Stereovision
 
 
 def test_parser_calib():

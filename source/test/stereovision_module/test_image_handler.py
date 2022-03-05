@@ -1,5 +1,5 @@
 import pytest
-from image_handler import ImageHandler
+from stereovision_module.image_handler import ImageHandler
 import os
 import cv2
 os.chdir('/home/runner/work/RoboticArm/RoboticArm/source/stereovision_module')

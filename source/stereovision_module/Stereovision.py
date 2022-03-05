@@ -1,10 +1,10 @@
 import sys
-from depth_map import DepthMap
 from argparse import ArgumentParser
-from calibration import Calibrator
-from photo_sequence import PhotoSequence
 
 import params
+from calibration import Calibrator
+from depth_map import DepthMap
+from photo_sequence import PhotoSequence
 
 
 def parse_args(args):

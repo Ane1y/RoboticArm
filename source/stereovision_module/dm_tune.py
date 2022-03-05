@@ -1,11 +1,10 @@
 import logging
-import os
 
-import cv2
 import cv2.cv as cv
-#from picamera.array import PiRGBArray
-#from picamera import PiCamera
+# from picamera.array import PiRGBArray
+# from picamera import PiCamera
 import matplotlib as mpl
+
 mpl.use('Qt5Agg')
 from matplotlib import pyplot as plt
 
@@ -14,9 +13,7 @@ from matplotlib.widgets import Slider, Button
 
 import numpy as np
 import json
-import image_handler
 
-from stereovision.calibration import StereoCalibration
 logging.basicConfig(level='INFO')
 
 # Depth map function
