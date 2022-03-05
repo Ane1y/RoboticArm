@@ -31,7 +31,7 @@ jobs:
         pip install pyusb
         pip install stereovision
         pip install matplotlib
-        pip install opencv-python==2.3.0
+        pip install opencv-python
         if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
 
     - name: Lint with flake8
