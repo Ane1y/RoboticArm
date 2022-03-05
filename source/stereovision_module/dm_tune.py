@@ -5,7 +5,7 @@ import cv2
 # from picamera import PiCamera
 import matplotlib as mpl
 
-# mpl.use('Qt5Agg')
+mpl.use('Qt5Agg')
 from matplotlib import pyplot as plt
 
 from depth_map import DepthMap
@@ -123,7 +123,6 @@ image = 'scenes/photo.png'
 rectified_pair, disparity = depthMap.build_depth_map(image)
 # disparity = read_parameters(rectified_pair)
 
-plt.ion()
 
 # Set up and draw interface
 # Draw left image and depth map
@@ -183,4 +182,4 @@ sSPWS.on_changed(update)
 
 
 print('Show interface to user')
-plt.show(block=True)
+plt.show()
