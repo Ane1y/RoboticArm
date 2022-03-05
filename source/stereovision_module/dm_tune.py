@@ -1,11 +1,11 @@
 import logging
 
-import cv2.cv as cv
+import cv2
 # from picamera.array import PiRGBArray
 # from picamera import PiCamera
 import matplotlib as mpl
 
-mpl.use('Qt5Agg')
+# mpl.use('Qt5Agg')
 from matplotlib import pyplot as plt
 
 from depth_map import DepthMap
@@ -27,30 +27,31 @@ UR = 10
 SR = 15
 SPWS = 100
 
-def read_parameters(rectified_pair):
-    print ('SWS='+str(SWS)+' PFS='+str(PFS)+' PFC='+str(PFC)+' MDS='+\
-           str(MDS)+' NOD='+str(NOD)+' TTH='+str(TTH))
-    print (' UR='+str(UR)+' SR='+str(SR)+' SPWS='+str(SPWS))
-    c, r = rectified_pair[0].shape
-    disparity = cv.CreateMat(c, r, cv.CV_32F)
-    sbm = cv.CreateStereoBMState()
-    sbm.SADWindowSize = SWS
-    sbm.preFilterType = 1
-    sbm.preFilterSize = PFS
-    sbm.preFilterCap = PFC
-    sbm.minDisparity = MDS
-    sbm.numberOfDisparities = NOD
-    sbm.textureThreshold = TTH
-    sbm.uniquenessRatio= UR
-    sbm.speckleRange = SR
-    sbm.speckleWindowSize = SPWS
-    dmLeft = cv.fromarray (rectified_pair[0])
-    dmRight = cv.fromarray (rectified_pair[1])
-    cv.FindStereoCorrespondenceBM(dmLeft, dmRight, disparity, sbm)
-    disparity_visual = cv.CreateMat(c, r, cv.CV_8U)
-    cv.Normalize(disparity, disparity_visual, 0, 255, cv.CV_MINMAX)
-    disparity_visual = np.array(disparity_visual)
-    return disparity_visual
+# def read_parameters(rectified_pair):
+#     print ('SWS='+str(SWS)+' PFS='+str(PFS)+' PFC='+str(PFC)+' MDS='+\
+#            str(MDS)+' NOD='+str(NOD)+' TTH='+str(TTH))
+#     print (' UR='+str(UR)+' SR='+str(SR)+' SPWS='+str(SPWS))
+#     c, r = rectified_pair[0].shape
+#     # disparity = cv.CreateMat(c, r, cv.CV_32F)
+#     # sbm = cv.CreateStereoBMState()
+#     # sbm.SADWindowSize = SWS
+#     # sbm.preFilterType = 1
+#     # sbm.preFilterSize = PFS
+#     # sbm.preFilterCap = PFC
+#     # sbm.minDisparity = MDS
+#     # sbm.numberOfDisparities = NOD
+#     # sbm.textureThreshold = TTH
+#     # sbm.uniquenessRatio= UR
+#     # sbm.speckleRange = SR
+#     # sbm.speckleWindowSize = SPWS
+#     # dmLeft = cv.fromarray (rectified_pair[0])
+#     # dmRight = cv.fromarray (rectified_pair[1])
+#     # cv.FindStereoCorrespondenceBM(dmLeft, dmRight, disparity, sbm)
+#     # disparity_visual = cv.CreateMat(c, r, cv.CV_8U)
+#     # cv.Normalize(disparity, disparity_visual, 0, 255, cv.CV_MINMAX)
+#     # disparity_visual = np.array(disparity_visual)
+#     disparity_vusial =
+#     return disparity_visual
 
 
 def save_map_settings(event):
@@ -110,8 +111,8 @@ def update(val):
         logging.info('Rebuilding depth map')
         depthMap = DepthMap()
         image = 'scenes/photo.png'
-        rectified_pair, _ = depthMap.build_depth_map(image)
-        disparity = read_parameters(rectified_pair)
+        rectified_pair, disparity = depthMap.build_depth_map(image)
+        # disparity = read_parameters(rectified_pair)
         dmObject.set_data(disparity)
         logging.info('Redraw depth map')
         plt.ion()
@@ -119,8 +120,8 @@ def update(val):
 
 depthMap = DepthMap()
 image = 'scenes/photo.png'
-rectified_pair, _ = depthMap.build_depth_map(image)
-disparity = read_parameters(rectified_pair)
+rectified_pair, disparity = depthMap.build_depth_map(image)
+# disparity = read_parameters(rectified_pair)
 
 plt.ion()
 

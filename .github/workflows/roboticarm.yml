@@ -10,7 +10,7 @@ on:
 
 jobs:
   build:
-    runs-on: windows-latest
+    runs-on: ubuntu-latest
     strategy:
         matrix:
           python-version: ["2.7"]
@@ -26,8 +26,8 @@ jobs:
         pip install matplotlib
         pip install numpy
         pip install stereovision
+        pip install opencv-python==3.4.0.14
         pip install pytest
-        cp /home/runner/work/RoboticArm/RoboticArm/cv2.pyd /opt/hostedtoolcache/Python/2.7.18/x64/lib/cv2.pyd
         if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
 
 #    - name: Lint with flake8
