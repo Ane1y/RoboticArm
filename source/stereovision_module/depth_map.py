@@ -25,9 +25,9 @@ class DepthMap(ImageHandler):
 
     # Depth map function
     def stereo_depth_map(self,rectified_pair, ndisp, sws):
-        # stereo = cv2.StereoBM_create(numDisparities=ndisp,blockSize= sws)
-        stereo = cv2.StereoBM(cv2.STEREO_BM_BASIC_PRESET, \
-                              ndisparities=ndisp, SADWindowSize=sws)
+        stereo = cv2.StereoBM_create(numDisparities=ndisp,blockSize= sws)
+        # stereo = cv2.StereoBM(cv2.STEREO_BM_BASIC_PRESET, \
+        #                       ndisparities=ndisp, SADWindowSize=sws)
         return stereo.compute(rectified_pair[0], rectified_pair[1])
 
     def build_depth_map(self, image_path):
