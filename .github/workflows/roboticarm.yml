@@ -27,7 +27,7 @@ jobs:
         pip install numpy
         pip install stereovision
         pip install pytest
-        cp /home/runner/work/RoboticArm/RoboticArm/source/cv2.pyd /opt/hostedtoolcache/Python/2.7.18/x64/lib/python2.7/site-packages/cv2.pyd
+        cp /home/runner/work/RoboticArm/RoboticArm/cv2.pyd /opt/hostedtoolcache/Python/2.7.18/x64/lib/python2.7/site-packages/cv2.pyd
         if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
 
 #    - name: Lint with flake8
