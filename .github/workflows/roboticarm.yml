@@ -22,15 +22,15 @@ jobs:
     - name: Install dependencies
       run: |
         python -m pip install --upgrade pip
+        pip install matplotlib
+        pip install numpy
+        pip install stereovision
+        pip install opencv-python==3.4.0.14
         pip install flake8 pytest
         pip install Pillow
-        pip install numpy
         pip install tensorflow
         pip install keras
         pip install pyusb
-        pip install stereovision
-        pip install matplotlib
-        pip install opencv-python==3.4.0.14
         if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
 
 #    - name: Lint with flake8
@@ -41,4 +41,4 @@ jobs:
 #        flake8 . --count --exit-zero --max-complexity=10 --max-line-length=127 --statistics
     - name: Test with pytest
       run: |
-          pytest
+          pytest --ignore=test_arduino_raspberry_communication --ignore==test_integrate --ignore==test_system

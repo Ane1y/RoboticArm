@@ -2,7 +2,7 @@ import os
 
 from dm_tune import *
 
-os.chdir('../stereovision_module')
+os.chdir('/home/runner/work/RoboticArm/RoboticArm/source/stereovision_module')
 
 def test_is_pair_calibrated():
     calibration_files = os.listdir('ress')

@@ -4,7 +4,7 @@ import pytest
 from stereovision.calibration import StereoCalibration
 from stereovision_module.depth_map import DepthMap
 
-os.chdir('../stereovision_module')
+os.chdir('/home/runner/work/RoboticArm/RoboticArm/source/stereovision_module')
 
 def test_build_depth_map_wrong_path():
     depthMap = DepthMap()

@@ -1,7 +1,6 @@
 import logging
 
 import cv2
-import imutils as imutils
 from matplotlib import pyplot as plt
 import numpy as np
 import json

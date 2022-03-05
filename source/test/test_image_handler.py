@@ -2,7 +2,7 @@ import pytest
 from image_handler import ImageHandler
 import os
 import cv2
-os.chdir('../stereovision_module')
+os.chdir('/home/runner/work/RoboticArm/RoboticArm/source/stereovision_module')
 
 def test_pair_img_size():
     imageToDisp = 'scenes/photo.png'
